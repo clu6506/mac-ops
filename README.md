@@ -39,7 +39,7 @@ Make sure you have your ssh keys restored from backup.
 
 Clone the repo down to your laptop:
 
-`git clone git@github.com:todd-dsm/mac-ops.git && cd mac-ops/`
+`git clone git@github.com:clu6506/mac-ops.git && cd mac-ops/`
 
 ***
 
