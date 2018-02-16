@@ -117,12 +117,12 @@ printReq "Pulling Terminal stuff..."
 git clone "$solarizedGitRepo" "$termStuff/solarized" > /dev/null 2>&1
 
 # Pull the settings back
-if [[ ! -d "$myBackups" ]]; then
-    printHead "There are no 'settings' to restore."
-else
-    printHead "Restoring Terminal (and other) settings..."
-    rsync -aEv  "$myBackups/Documents/system" "$myDocs/" 2> /tmp/rsync-err-system.out
-fi
+#if [[ ! -d "$myBackups" ]]; then
+#    printHead "There are no 'settings' to restore."
+#else
+#    printHead "Restoring Terminal (and other) settings..."
+#    rsync -aEv  "$myBackups/Documents/system" "$myDocs/" 2> /tmp/rsync-err-system.out
+#fi
 
 ###----------------------------------------------------------------------------
 ### Configure the Shell: base options
@@ -439,12 +439,12 @@ printReq "Installing system-admin utilities..."
 printHead "Some networking and convenience stuff..."
 brew install \
     git nmap homebrew/dupes/rsync ssh-copy-id watch tree pstree psgrep  \
-    sipcalc whatmask ipcalc dos2unix testdisk homebrew/fuse/sshfs       \
-    homebrew/dupes/openssh
+    sipcalc whatmask ipcalc dos2unix testdisk homebrew/dupes/openssh
 
 ### Seperate installs for programs with options
 printHead "Installing tcl-tk with options..."
 brew install homebrew/dupes/tcl-tk --with-threads
+brew install sshfs
 
 ### Include path for tcl-tk
 printHead "Opening up /usr/local/opt/tcl-tk/bin so we can see tcl..."
@@ -1259,12 +1259,12 @@ ln -s ~/.config/admin/logs/mac-ops-config.out config-output.log
 ###----------------------------------------------------------------------------
 ### Restore Personal Data
 ###----------------------------------------------------------------------------
-if [[ ! -d "$myBackups" ]]; then
-    printInfo "There are no Documents to restore."
-else
-    printInfo "Restoring files..."
-    tools/restore-my-stuff.sh 2> /tmp/rsycn-errors.out
-fi
+#if [[ ! -d "$myBackups" ]]; then
+#    printInfo "There are no Documents to restore."
+#else
+#    printInfo "Restoring files..."
+#    tools/restore-my-stuff.sh 2> /tmp/rsycn-errors.out
+#fi
 
 
 ###----------------------------------------------------------------------------

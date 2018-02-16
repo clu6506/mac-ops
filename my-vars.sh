@@ -7,21 +7,21 @@
 # -----------------------------------------------------------------------------
 
 # Are we testing or are we really doing this?
-export theENV='TEST'
+export theENV='LIVE'
 
 # What's your Full Name?
-export myFullName='Todd E Thomas'
+export myFullName='Charles Lu'
 
 # What would you like to call your computer?
-export myMBPName='tbook'
+export myMBPName='NY-M-QNHV29'
 
 # Do you have an internal domain?
 #   If there isn't one just delete the value between the quotes.
-export myDomain='ptest'
+export myDomain=''
 
 # What's the TLD for the internal domain?
 #   If there isn't one just delete the value between the quotes.
-export myTLD='us'
+export myTLD=''
 
 # Altogether
 export myDomaiName="$myDomain.$myTLD"
@@ -40,14 +40,14 @@ fi
 
 # Define a path to your backup device. It's just a path. It can point to an NFS
 # share, a USB drive, whatever.
-export myBackupDev='/Volumes/storage'
+#export myBackupDev='/Volumes/storage'
 
 # Define a path to your latest backups
-if [[ "$theENV" == 'TEST' ]]; then
-    export myBackupDir='test'
-else
-    export myBackupDir='pre_sierra'
-fi
+#if [[ "$theENV" == 'TEST' ]]; then
+#    export myBackupDir='test'
+#else
+#    export myBackupDir='pre_sierra'
+#fi
 
 # Define the last "$USER" backed up. 2 options:
 # 1) If theENV=TEST: $USER will always be 'vagrant'.
@@ -56,12 +56,12 @@ fi
 if [[ "$theENV" == 'TEST' ]]; then
     export lastUser="$USER"
 else
-    export lastUser="thomas"    # replace with your current user name
+    export lastUser="clu"    # replace with your current user name
 fi
 
 # Define Restore SRC (source of the backups)
-export  myBackups="$myBackupDev/$myBackupDir/$lastUser/current"
-export sysBackups="$myBackupDev/$myBackupDir/system"
+#export  myBackups="$myBackupDev/$myBackupDir/$lastUser/current"
+#export sysBackups="$myBackupDev/$myBackupDir/system"
 
 # -----------------------------------------------------------------------------
 # Define some personal truths *if they are different*. This stuff doesn't
@@ -104,7 +104,7 @@ declare myMans=''
 declare configDir="$HOME/.config"
 declare adminDir="$configDir/admin"
 declare adminLogs="$adminDir/logs"
-declare backupDir="$adminDir/backup"
+#declare backupDir="$adminDir/backup"
 declare termDir="$configDir/term"
 declare nvimDir="$configDir/nvim"
 declare sysShells='/etc/shells'
